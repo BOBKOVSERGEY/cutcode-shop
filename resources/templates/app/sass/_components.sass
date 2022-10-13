@@ -1,0 +1,246 @@
+// Buttons
+.btn
+	position: relative
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	height: 74px
+	padding-left: 36px
+	padding-right: 36px
+	border-radius: 8px
+	font-size: 16px
+	font-weight: 600
+	line-height: 1.3
+	text-align: center
+	transition: $trs
+	+media-breakpoint-down(xl)
+		height: 64px
+		padding-left: 32px
+		padding-right: 32px
+	&:active
+		box-shadow: none !important
+		transform: translateY(3px)
+
+.btn-purple
+	box-shadow: 0px 3px 0px rgba($purple, 0.3)
+	background-color: $purple
+	color: $white
+	&:hover
+		background-color: darken($purple, 5%)
+
+.btn-pink
+	box-shadow: 0px 3px 0px rgba($pink, 0.3)
+	background-color: $pink
+	color: $white
+	&:hover
+		background-color: darken($pink, 10%)
+
+.btn-outline
+	border: 1px solid $pink
+	color: $white
+	&:hover
+		background-color: darken($pink, 10%)
+
+
+// Form
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration
+	display: none
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+	-webkit-appearance: none
+	margin: 0
+
+input[type=number]
+	-moz-appearance: textfield
+
+.form-control
+	width: 100%
+	padding: 24px 32px
+	border-radius: 8px
+	border: 0
+	box-shadow: 0 4px 0 rgba($white, 0.2)
+	background-color: $white
+	color: $darkblue
+	font-size: 16px
+	font-weight: 600
+	transition: $trs
+	+media-breakpoint-down(xl)
+		padding: 16px 24px
+	+media-breakpoint-down(xs)
+		padding: 12px 18px
+	&::placeholder
+		color: rgba($darkblue, 0.5)
+	&:focus
+		outline: none
+
+// Select
+.form-select
+	cursor: pointer
+	appearance: none
+	padding-right: 32px
+	background-image: url('../images/icons/dropdown-arrow.svg')
+	background-repeat: no-repeat
+	background-position: right 8px center
+	background-size: 20px
+	> *
+		background-color: $darkblue
+		color: $white
+
+// Checkbox
+.form-checkbox
+	position: relative
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	margin-bottom: 12px
+	input[type="checkbox"]
+		position: absolute
+		top: 0
+		left: 3px
+		opacity: 0
+	&-label
+		cursor: pointer
+		user-select: none
+		position: relative
+		width: 100%
+		margin-bottom: 0
+		padding-left: 32px
+		color: $white
+		font-size: 16px
+		line-height: 20px
+		&::before,
+		&::after
+			content: ''
+			flex: 0 0 auto
+			position: absolute
+			top: 0
+			left: 0
+			width: 20px
+			height: 20px
+			border-radius: 4px
+			border: 1px solid rgba($body, 0.35)
+			background-color: $trsp
+			transition: border .3s ease, opacity .15s ease
+		&::after
+			border-color: $pink
+			background: $pink url('../images/icons/checked-white.svg') no-repeat center/10px
+			opacity: 0
+		&:hover
+			&::before,
+			&::after
+				border-color: $pink
+	input:checked + label::after
+		opacity: 1
+
+// Radio
+.form-radio
+	position: relative
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	margin-bottom: 8px
+	input[type="radio"]
+		position: absolute
+		top: 0
+		left: 3px
+		opacity: 0
+	&-label
+		cursor: pointer
+		user-select: none
+		position: relative
+		width: 100%
+		padding-top: 2px
+		margin-bottom: 0
+		padding-left: 36px
+		color: $white
+		font-size: 16px
+		line-height: 20px
+		&::before
+			content: ''
+			flex: 0 0 auto
+			position: absolute
+			top: 0
+			left: 0
+			width: 24px
+			height: 24px
+			border-radius: 50%
+			border: 1px solid rgba($body, 0.35)
+			background-color: $trsp
+			transition: $trs
+		&::after
+			content: ''
+			flex: 0 0 auto
+			position: absolute
+			top: 8px
+			left: 8px
+			z-index: 2
+			display: block
+			width: 8px
+			height: 8px
+			border-radius: 50%
+			background-color: $white
+			opacity: 0
+			transition: $trs
+		&:hover
+			&::before,
+			&::after
+				border-color: $pink
+	input:checked + label
+		&::before
+			border-color: $trsp
+			background-color: $pink
+		&::after
+			opacity: 1
+
+
+// Accrodion
+.accordion
+	&-header
+		&-icon
+			flex-shrink: 0
+			margin-left: 12px
+			fill: $white
+			+media-breakpoint-down(xs)
+				width: 14px
+				height: 14px
+		&._is-toggled
+			.accordion-header-title
+				color: $white
+			.accordion-header-icon
+				fill: $white
+				transform: scaleY(-1)
+			.accordion-content
+				display: block
+	&-content
+		transition: max-height 0.3s ease-out, padding 0.3s ease
+
+
+// Breadcrumbs
+.breadcrumbs
+	> li
+		position: relative
+		&:not(:last-child)::after
+			content: '—'
+			margin-left: 16px
+			color: $body
+
+
+// Article
+article
+	ul
+		> li
+			position: relative
+			display: flex
+			align-items: baseline
+			&::before
+				content: ''
+				flex: 0 0 auto
+				width: 12px
+				height: 12px
+				margin-right: 12px
+				border-radius: 3px
+				background-color: $pink
