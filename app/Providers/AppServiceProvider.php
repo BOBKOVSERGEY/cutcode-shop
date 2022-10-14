@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Http\Kernel;
+use Carbon\CarbonInterval;
 use Illuminate\Database\Connection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -32,7 +34,12 @@ class AppServiceProvider extends ServiceProvider
         DB::whenQueryingForLongerThan(500, function (Connection $connection) {
             // Notify development team...
         });
-
-
+        // todo request cycle
+        $kernel = app(Kernel::class);
+        $kernel->whenRequestLifecycleIsLongerThan(
+            CarbonInterval::seconds(4),
+            function () {
+            }
+        );
     }
 }

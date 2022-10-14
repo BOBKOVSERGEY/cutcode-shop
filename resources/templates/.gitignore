@@ -1,9 +1,2 @@
-/node_modules/
-/.git/
-/**/Thumbs.db
-/**/*.DS_Store
-/**/package-lock.json
-/**/debug.log
-/dist/
-/**/*.zip
-/**/*.rar
+node_modules/
+dist/
