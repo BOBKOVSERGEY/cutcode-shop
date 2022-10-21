@@ -23,10 +23,14 @@ return new class extends Migration {
                 ->nullable();
             $table->unsignedInteger('price')
                 ->default(0);
+
+            // если бренд удалился поставится null
             $table->foreignIdFor(Brand::class)
+                ->nullable()
                 ->constrained()
-                ->cascadeOnDelete()
-                ->cascadeOnUpdate();
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
+
             $table->timestamps();
         });
 
