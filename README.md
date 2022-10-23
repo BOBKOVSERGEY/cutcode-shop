@@ -1,7 +1,6 @@
 # Installation
 
-- php artisan storage:link
-- php artisan migrate
+- php artisan shop:install
 
 #debug bar
 
@@ -14,4 +13,13 @@ https://tz.cutcode.ru/
 https://store.cutcode.ru/
 
 php artisan migrate:fresh --seed
+
+# create template terminal
+
+php artisan stub:publish
+
+#create ca
+
+#create консольных команд
+php artisan make:command InstallCommand
 
