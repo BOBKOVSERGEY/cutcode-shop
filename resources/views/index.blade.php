@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('layouts.app')
 @section('content')
     @auth
         <form action="{{ route('logOut') }}" method="POST">

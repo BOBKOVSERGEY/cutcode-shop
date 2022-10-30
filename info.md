@@ -24,6 +24,5 @@ php artisan make:notification NewUserNotification
 #isntall socialite
 composer require laravel/socialite
 
-https://www.youtube.com/watch?v=DGaXW6DLV6M
+#composer dump-autoload перегенираци файлов 
 
-1:15:46
