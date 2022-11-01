@@ -24,5 +24,9 @@ php artisan make:notification NewUserNotification
 #isntall socialite
 composer require laravel/socialite
 
-#composer dump-autoload перегенираци файлов 
+#composer dump-autoload перегенираци файлов
+
+# создание теста
+
+php artisan make:test AuthControllerTest --unit
 
