@@ -30,3 +30,4 @@ composer require laravel/socialite
 
 php artisan make:test AuthControllerTest --unit
 
+https://www.youtube.com/watch?v=3XzLjakADqA 19.24
