@@ -38,7 +38,7 @@ class NewUserNotification extends Notification implements ShouldQueue
      * @param mixed $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
-    public function toMail($notifiable)
+    public function toMail($notifiable): MailMessage
     {
         return (new MailMessage)
             ->line('Добро пожаловать')

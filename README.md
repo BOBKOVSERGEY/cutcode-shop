@@ -23,3 +23,5 @@ php artisan stub:publish
 #create консольных команд
 php artisan make:command InstallCommand
 
+https://store.cutcode.ru/course/75
+
