@@ -1,10 +1,8 @@
 <?php
 
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
-
-use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Requests\SignUpFormRequest;
 use App\Listeners\SendEmailNewUserListener;
 use App\Notifications\NewUserNotification;
@@ -17,7 +15,7 @@ use Illuminate\Support\Facades\Notification;
 use Illuminate\Testing\TestResponse;
 use Tests\TestCase;
 
-class SignInControllerTest extends TestCase
+class SignUpControllerTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -162,5 +160,4 @@ class SignInControllerTest extends TestCase
 
         $this->assertAuthenticatedAs($this->findUser());
     }
-
 }
