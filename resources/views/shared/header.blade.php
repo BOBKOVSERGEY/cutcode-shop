@@ -8,10 +8,15 @@
                 </a>
             </div><!-- /.header-logo -->
             <div class="header-menu grow hidden lg:flex items-center ml-8 mr-8 gap-8">
-                <form class="hidden lg:flex gap-3">
-                    <input type="search"
-                           class="w-full h-12 px-4 rounded-lg border border-body/10 focus:border-pink focus:shadow-[0_0_0_3px_#EC4176] bg-white/5 text-white text-xs shadow-transparent outline-0 transition"
-                           placeholder="Поиск..." required>
+                <form
+                    action="{{ route('catalog') }}"
+                    class="hidden lg:flex gap-3">
+                    <input
+                        name="s"
+                        value="{{ request('s') }}"
+                        type="search"
+                        class="w-full h-12 px-4 rounded-lg border border-body/10 focus:border-pink focus:shadow-[0_0_0_3px_#EC4176] bg-white/5 text-white text-xs shadow-transparent outline-0 transition"
+                        placeholder="Поиск..." required>
                     <button type="submit" class="shrink-0 w-12 !h-12 !px-0 btn btn-pink">
                         <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 52 52">
                             <path
@@ -21,7 +26,7 @@
                 </form>
                 <nav class="hidden 2xl:flex gap-8">
                     <a href="{{ route('home') }}" class="text-white hover:text-pink font-bold">Главная</a>
-                    <a href="#" class="text-white hover:text-pink font-bold">Каталог товаров</a>
+                    <a href="{{ route('catalog') }}" class="text-white hover:text-pink font-bold">Каталог товаров</a>
                     <a href="#" class="text-white hover:text-pink font-bold">Корзина</a>
                 </nav>
             </div><!-- /.header-menu -->

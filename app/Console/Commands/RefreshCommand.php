@@ -25,6 +25,8 @@ class RefreshCommand extends Command
             '--seed' => true
         ]);
 
+        $this->call('cache:clear');
+
         return self::SUCCESS;
     }
 }
