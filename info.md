@@ -31,3 +31,10 @@ composer require laravel/socialite
 php artisan make:test AuthControllerTest --unit
 
 https://www.youtube.com/watch?v=3XzLjakADqA 19.24
+
+// todo
+
+1. сделали базовую вьюху
+2. добавили роутинг ProductRegistrar
+3. добавили контроллер ProductController
+4. зарегистрировали в RouteServiceProvider ProductRegistrar::class
