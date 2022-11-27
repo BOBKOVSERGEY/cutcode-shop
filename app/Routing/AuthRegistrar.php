@@ -2,7 +2,7 @@
 
 namespace App\Routing;
 
-use App\Contracts\RouteRegistrars;
+use App\Contracts\RouteRegistrar;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\SignInController;
@@ -11,7 +11,7 @@ use App\Http\Controllers\Auth\SocialAuthController;
 use Illuminate\Contracts\Routing\Registrar;
 use Illuminate\Support\Facades\Route;
 
-class AuthRegistrar implements RouteRegistrars
+class AuthRegistrar implements RouteRegistrar
 {
 
     public function map(Registrar $registrar): void

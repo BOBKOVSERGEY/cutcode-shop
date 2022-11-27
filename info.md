@@ -38,3 +38,15 @@ https://www.youtube.com/watch?v=3XzLjakADqA 19.24
 2. добавили роутинг ProductRegistrar
 3. добавили контроллер ProductController
 4. зарегистрировали в RouteServiceProvider ProductRegistrar::class
+
+# Очереди
+
+https://laravel.com/docs/9.x/queues#supervisor-configuration
+запуск воркера php artisan queue:work
+
+php artisan queue:table
+php artisan make:job ProductJsonProperties
+
+#Createn view model
+php artisan make:view-model CatalogViewModel
+

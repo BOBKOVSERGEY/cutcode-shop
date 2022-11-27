@@ -2,13 +2,13 @@
 
 namespace App\Routing;
 
-use App\Contracts\RouteRegistrars;
+use App\Contracts\RouteRegistrar;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ThumbnailController;
 use Illuminate\Contracts\Routing\Registrar;
 use Illuminate\Support\Facades\Route;
 
-class AppRegistrar implements RouteRegistrars
+class AppRegistrar implements RouteRegistrar
 {
 
     public function map(Registrar $registrar): void

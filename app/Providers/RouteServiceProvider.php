@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Contracts\RouteRegistrars;
+use App\Contracts\RouteRegistrar;
 use App\Routing\AppRegistrar;
 use App\Routing\AuthRegistrar;
 use App\Routing\CatalogRegistrar;
@@ -72,7 +72,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapRoutes(Registrar $router, array $registrars): void
     {
         foreach ($registrars as $registrar) {
-            if (!class_exists($registrar) || !is_subclass_of($registrar, RouteRegistrars::class)) {
+            if (!class_exists($registrar) || !is_subclass_of($registrar, RouteRegistrar::class)) {
                 throw new RuntimeException(
                     sprintf(
                         'Cannot map routers \'%s\', it is not a valid routes class',

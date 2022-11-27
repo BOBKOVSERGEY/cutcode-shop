@@ -4,7 +4,7 @@
 namespace Domain\Catalog\Facades;
 
 
-use Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Facade;
 
 /**

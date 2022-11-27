@@ -2,13 +2,13 @@
 
 namespace App\Routing;
 
-use App\Contracts\RouteRegistrars;
+use App\Contracts\RouteRegistrar;
 use App\Http\Controllers\CatalogController;
 use App\Http\Middleware\CatalogViewMiddleware;
 use Illuminate\Contracts\Routing\Registrar;
 use Illuminate\Support\Facades\Route;
 
-class CatalogRegistrar implements RouteRegistrars
+class CatalogRegistrar implements RouteRegistrar
 {
 
     public function map(Registrar $registrar): void

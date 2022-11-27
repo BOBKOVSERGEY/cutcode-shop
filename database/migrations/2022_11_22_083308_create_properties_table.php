@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\Product;
-use App\Models\Property;
+use Domain\Product\Models\Product;
+use Domain\Product\Models\Property;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

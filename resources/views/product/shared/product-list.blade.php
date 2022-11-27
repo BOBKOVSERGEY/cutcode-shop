@@ -11,11 +11,11 @@
             </a>
         </h3>
         <ul class="space-y-1 mt-4 text-xxs">
-            <li class="flex justify-between text-body"><strong>Вес (г):</strong> 92</li>
-            <li class="flex justify-between text-body"><strong>Тип сенсора:</strong> Оптический</li>
-            <li class="flex justify-between text-body"><strong>DPI мыши:</strong> 18000</li>
-            <li class="flex justify-between text-body"><strong>Количество кнопок мыши:</strong> 8</li>
-            <li class="flex justify-between text-body"><strong>Подсветка:</strong> RGB</li>
+            @if($item->json_properties)
+                @foreach($item->json_properties as $property => $value)
+                    <li class="flex justify-between text-body"><strong>{{$property}}:</strong> {{$value}}</li>
+                @endforeach
+            @endif
         </ul>
         <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-6 mt-6">
             <div class="flex items-baseline gap-4">
