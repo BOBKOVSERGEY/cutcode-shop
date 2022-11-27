@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Domain\Catalog\Facades\Sorter;
 use Domain\Catalog\Models\Brand;
 use Domain\Catalog\Models\Category;
 use Illuminate\Contracts\Database\Query\Builder;
@@ -60,6 +61,12 @@ class Product extends Model
 
     public function scopeSorted(Builder $query)
     {
+        Sorter::run($query);
+        //sorter()->run($query);
+    }
+
+    /*public function scopeSorted(Builder $query)
+    {
         $query->when(request('sort'), function (Builder $q) {
             $column = request()->str('sort');
 
@@ -68,7 +75,7 @@ class Product extends Model
                 $q->orderBy((string)$column->remove('-'), $direction);
             }
         });
-    }
+    }*/
 
 
     public function brand(): BelongsTo
