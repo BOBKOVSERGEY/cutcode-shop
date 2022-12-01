@@ -50,3 +50,6 @@ php artisan make:job ProductJsonProperties
 #Createn view model
 php artisan make:view-model CatalogViewModel
 
+php artisan make:event AfterSessionRegenerated
+
+
