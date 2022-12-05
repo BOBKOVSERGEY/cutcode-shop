@@ -6,6 +6,7 @@ use Domain\Auth\Contracts\RegisterNewUserContracts;
 use Domain\Auth\DTOs\NewUserDTO;
 use Domain\Auth\Models\User;
 use Illuminate\Auth\Events\Registered;
+use Support\SessionRegenerator;
 
 class RegisterNewUserAction implements RegisterNewUserContracts
 {
@@ -20,6 +21,7 @@ class RegisterNewUserAction implements RegisterNewUserContracts
 
         event(new Registered($user));
         // logIn
-        auth()->login($user);
+
+        SessionRegenerator::run(fn() => auth()->login($user));
     }
 }

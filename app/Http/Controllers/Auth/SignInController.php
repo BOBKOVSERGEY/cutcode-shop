@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Events\AfterSessionRegenerated;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SignInFormRequest;
 use Illuminate\Contracts\Foundation\Application;
@@ -20,13 +21,20 @@ class SignInController extends Controller
 
     public function handle(SignInFormRequest $request): RedirectResponse
     {
+        $old = request()->session()->getId();
+
         if (!auth()->attempt($request->validated())) {
             return back()->withErrors([
                 'email' => 'The provided credentials do not match our records.',
             ])->onlyInput('email');
         }
 
-        SessionRegenerator::run();
+        event(
+            new AfterSessionRegenerated(
+                $old,
+                request()->session()->getId()
+            )
+        );
 
         return redirect()
             ->intended(route('home'));
@@ -35,7 +43,7 @@ class SignInController extends Controller
     public function logOut(): RedirectResponse
     {
         SessionRegenerator::run(fn() => auth()->logout());
-        
+
         return redirect()->route('home');
     }
 
