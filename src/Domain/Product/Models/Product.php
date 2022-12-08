@@ -32,7 +32,8 @@ class Product extends Model
         'on_home_page',
         'sorting',
         'text',
-        'json_properties'
+        'json_properties',
+        'quantity'
     ];
 
     protected $casts = [

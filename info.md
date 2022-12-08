@@ -42,7 +42,9 @@ https://www.youtube.com/watch?v=3XzLjakADqA 19.24
 # Очереди
 
 https://laravel.com/docs/9.x/queues#supervisor-configuration
-запуск воркера php artisan queue:work
+запуск воркера
+
+# php artisan queue:work
 
 php artisan queue:table
 php artisan make:job ProductJsonProperties
@@ -52,4 +54,10 @@ php artisan make:view-model CatalogViewModel
 
 php artisan make:event AfterSessionRegenerated
 
+# Create migration
+
+php artisan make:migration create_payment_methods_table.php
+
+https://store.cutcode.ru/course/58
+49:41
 

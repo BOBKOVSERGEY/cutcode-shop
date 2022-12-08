@@ -122,7 +122,7 @@
                 </div>
                 <div class="flex flex-col sm:flex-row lg:justify-end gap-4">
                     <a href="{{ route('catalog') }}" class="btn btn-pink">За покупками</a>
-                    <a href="#" class="btn btn-purple">Оформить заказ</a>
+                    <a href="{{ route('order') }}" class="btn btn-purple">Оформить заказ</a>
                 </div>
             </div>
         @endif

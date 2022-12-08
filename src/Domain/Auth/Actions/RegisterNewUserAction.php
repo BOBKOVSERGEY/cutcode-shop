@@ -21,7 +21,7 @@ class RegisterNewUserAction implements RegisterNewUserContracts
 
         event(new Registered($user));
         // logIn
-
+        //auth()->login($user);
         SessionRegenerator::run(fn() => auth()->login($user));
     }
 }
