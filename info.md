@@ -58,6 +58,6 @@ php artisan make:event AfterSessionRegenerated
 
 php artisan make:migration create_payment_methods_table.php
 
-https://store.cutcode.ru/course/58
-49:41
+https://store.cutcode.ru/course/95
+42ю11
 
